@@ -11,7 +11,7 @@ public class Simulation {
         int max = 20000;
         int min = 10000;
         int r = (int)(Math.random() * (max - min)) + min;
-        return (r % 15000 + 4000);
+        return (r % 15000 + 4501);
     }
 
 
@@ -74,8 +74,12 @@ public class Simulation {
 
     public static void main(String[] args) {
         // create a new Simulation object with a random starting altitude
+        Simulation simulation = new Simulation(new Vehicle(randomaltitude()));
         // create a new BurnInputStream
+        BurnInputStream burnInputStream = new BurnInputStream();
+        OnBoardComputer onBoardComputer = new OnBoardComputer();
         // pass the new BurnInputStream to the runSimulation method
+        simulation.runSimulation(onBoardComputer);
     }
 
 }
